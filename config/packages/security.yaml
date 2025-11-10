@@ -8,10 +8,10 @@ security:
             memory:
                 users:
                     admin:
-                        password: '$2y$13$aBAJ.Y3du6yZiFdsiR5zuOm4vKmVifoyKX5jYcmOYxgFcg45K48yu' # password is 'adminpass'
+                        password: '$2y$13$aBAJ.Y3du6yZiFdsiR5zuOm4vKmVifoyKX5jYcmOYxgFcg45K48yu' # password is 'troy'
                         roles: ['ROLE_ADMIN']
                     user:
-                        password: '$2y$13$8vdbG24RfoOZQ93gAassA.ZHRAU3WGRBkVyMs0.jtZeOwkIznPLsq'
+                        password: '$2y$13$8vdbG24RfoOZQ93gAassA.ZHRAU3WGRBkVyMs0.jtZeOwkIznPLsq' # password is 'grefalde'
                         roles: ['ROLE_USER']
     firewalls:
         dev:

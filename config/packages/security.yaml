@@ -11,7 +11,7 @@ security:
                         password: '$2y$13$aBAJ.Y3du6yZiFdsiR5zuOm4vKmVifoyKX5jYcmOYxgFcg45K48yu' # password is 'adminpass'
                         roles: ['ROLE_ADMIN']
                     user:
-                        password: '$2y$13$ZLkXKmfZ2a7l5bRpkohVs.8/2koXKVnvMLNPJfBtfuhKJQHlbQ4d'
+                        password: '$2y$13$8vdbG24RfoOZQ93gAassA.ZHRAU3WGRBkVyMs0.jtZeOwkIznPLsq'
                         roles: ['ROLE_USER']
     firewalls:
         dev:

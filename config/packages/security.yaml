@@ -4,14 +4,23 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
-        users_in_memory: { memory: null } 
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: '$2y$13$aBAJ.Y3du6yZiFdsiR5zuOm4vKmVifoyKX5jYcmOYxgFcg45K48yu' # password is 'adminpass'
+                        roles: ['ROLE_ADMIN']
+                    user:
+                        password: '$2y$13$ZLkXKmfZ2a7l5bRpkohVs.8/2koXKVnvMLNPJfBtfuhKJQHlbQ4d'
+                        roles: ['ROLE_USER']
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            http-basic: ~
+            provider: in_memory
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -23,7 +32,7 @@ security:
     # Note: Only the *first* access control that matches will be used
 
     access_control:
-        - { path: ^/dashboard, roles: ROLE_USER } # Reference for my future Dashboard
+        - { path: ^/dashboard, roles: [ROLE_USER, ROLE_ADMIN] } # Reference for my future Dashboard
 
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
